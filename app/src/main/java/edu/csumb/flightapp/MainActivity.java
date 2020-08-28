@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //CHECK USER
     boolean validateUser(){
 
         mUserList = TrackerRoom.getTrackerRoom(MainActivity.this).dao().getAllUsers();
