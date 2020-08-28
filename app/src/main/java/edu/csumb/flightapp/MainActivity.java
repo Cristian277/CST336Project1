@@ -19,7 +19,6 @@ import java.util.List;
 import edu.csumb.flightapp.model.TrackerRoom;
 import edu.csumb.flightapp.model.User;
 
-
 public class MainActivity extends AppCompatActivity {
 
     List<User> mUserList;
