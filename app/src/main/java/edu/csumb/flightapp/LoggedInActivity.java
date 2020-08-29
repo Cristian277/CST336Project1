@@ -15,6 +15,7 @@ public class LoggedInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logged_in);
 
+        //TAKES USER TO ADD COURSES ACTIVITY
         Button add_courses_button = findViewById(R.id.add_courses_button);
 
         add_courses_button.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +26,7 @@ public class LoggedInActivity extends AppCompatActivity {
             }
         });
 
+        //TAKE THE USER TO COURSES ADDED
         Button show_courses_button = findViewById(R.id.show_courses_button);
 
         show_courses_button.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,18 @@ public class LoggedInActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //LOG THE USER OUT
+        Button log_out_button = findViewById(R.id.log_out_button);
+
+        log_out_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoggedInActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

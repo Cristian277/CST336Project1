@@ -28,16 +28,23 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Courses (DEVELOPMENT TEST)"
+        android:text="Add Courses"
         android:gravity="center_horizontal"
         android:id="@+id/add_courses_button" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Courses (DEVELOPMENT TEST)"
+        android:text="Show Courses"
         android:gravity="center_horizontal"
         android:id="@+id/show_courses_button" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:gravity="center_horizontal"
+        android:id="@+id/log_out_button" />
 
 
 </LinearLayout>

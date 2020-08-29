@@ -60,7 +60,7 @@ public class AddCourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(AddCourseActivity.this,MainActivity.class);
+                Intent intent = new Intent(AddCourseActivity.this,LoggedInActivity.class);
                 startActivity(intent);
             }
         });
@@ -83,7 +83,7 @@ public class AddCourseActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Course was added.", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(AddCourseActivity.this,MainActivity.class);
+        Intent intent = new Intent(AddCourseActivity.this,LoggedInActivity.class);
         startActivity(intent);
 
         return true;
