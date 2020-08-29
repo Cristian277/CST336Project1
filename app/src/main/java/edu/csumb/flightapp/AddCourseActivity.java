@@ -18,7 +18,7 @@ import edu.csumb.flightapp.model.TrackerRoom;
 
 public class AddCourseActivity extends AppCompatActivity {
 
-    private static final String LOGWORKOUT_ACTIVITY = "AddCourseActivity";
+    private static final String ADD_COURSE_ACTIVITY = "AddCourseActivity";
 
 
     EditText mInstructorName;

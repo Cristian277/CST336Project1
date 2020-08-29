@@ -25,7 +25,7 @@ import edu.csumb.flightapp.model.TrackerRoom;
 
 public class ShowCoursesActivity extends AppCompatActivity {
 
-    private static final String SHOWWORKOUTSACTIVITY = "ShowCoursesActivity";
+    private static final String SHOWCOURSESACTIVITY = "ShowCoursesActivity";
 
     List<Course> courses;
     Button clear_button;
@@ -56,14 +56,13 @@ public class ShowCoursesActivity extends AppCompatActivity {
         return_main_button.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //Log.d(SHOWWORKOUTSACTIVITY, "onClick return called");
                 finish();
             }
         });
 
         // get all flights from database and assign to flights array
         courses = TrackerRoom.getTrackerRoom(this).dao().getAllCourses();
-        Log.d(SHOWWORKOUTSACTIVITY, "flights count " + courses.size());
+        Log.d(SHOWCOURSESACTIVITY, "flights count " + courses.size());
 
         ListView courses_view = findViewById(R.id.course_list);
         //Takes in a course arraylist to display
