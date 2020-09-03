@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.csumb.flightapp">
+    package="edu.csumb.gradetracker">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="edu.csumb.gradetracker.MainActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShowCoursesActivity"
+            android:name="edu.csumb.gradetracker.ShowCoursesActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddCourseActivity"
+            android:name="edu.csumb.gradetracker.AddCourseActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -40,8 +40,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateAccountActivity"
-            android:label="@string/app_name"
+            android:name="edu.csumb.gradetracker.CreateAccountActivity"
+            android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,8 +50,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoggedInActivity"
-            android:label="@string/app_name"
+            android:name="edu.csumb.gradetracker.LoggedInActivity"
+            android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

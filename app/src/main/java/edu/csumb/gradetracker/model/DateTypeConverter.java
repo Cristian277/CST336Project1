@@ -1,9 +1,7 @@
-package edu.csumb.flightapp.model;
+package edu.csumb.gradetracker.model;
 
 import androidx.room.TypeConverter;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class DateTypeConverter {

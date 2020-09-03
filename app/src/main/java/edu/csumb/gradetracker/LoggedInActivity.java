@@ -1,4 +1,4 @@
-package edu.csumb.flightapp;
+package edu.csumb.gradetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 

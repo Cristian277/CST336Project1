@@ -1,4 +1,4 @@
-package edu.csumb.flightapp.model;
+package edu.csumb.gradetracker.model;
 
 import androidx.room.Entity;
 import androidx.room.Ignore;

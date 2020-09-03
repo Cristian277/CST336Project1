@@ -1,13 +1,11 @@
-package edu.csumb.flightapp;
+package edu.csumb.gradetracker;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,13 +14,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
 
-import edu.csumb.flightapp.model.TrackerDao;
-import edu.csumb.flightapp.model.TrackerRoom;
-import edu.csumb.flightapp.model.User;
+import edu.csumb.gradetracker.model.TrackerDao;
+import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
 
 public class CreateAccountActivity  extends AppCompatActivity {
-
-    private static final String CREATE_ACCOUNT_ACTIVITY = "CreateAccountActivity";
 
     EditText mUserName;
     EditText mPassword;
