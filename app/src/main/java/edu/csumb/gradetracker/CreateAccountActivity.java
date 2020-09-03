@@ -22,6 +22,8 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
     EditText mUserName;
     EditText mPassword;
+    EditText mFirstName;
+    EditText mLastName;
     List<User> mUsers;
     int count = 0;
 
@@ -35,6 +37,8 @@ public class CreateAccountActivity  extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Button create_button = findViewById(R.id.create_account_button);
+        mFirstName = findViewById(R.id.firstName);
+        mLastName = findViewById(R.id.lastName);
         mUserName = findViewById(R.id.username); //set to the text typed in
         mPassword = findViewById(R.id.password);
 
@@ -74,8 +78,8 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
         String userName = mUserName.getText().toString();
         String password = mPassword.getText().toString();
-        String firstName = "Something";
-        String lastName = "Else";
+        String firstName = mFirstName.getText().toString();
+        String lastName = mLastName.getText().toString();
 
         int alphabetCountUserName = 0;
         int digitCountUserName = 0;

@@ -32,6 +32,9 @@ public interface TrackerDao {
     @Query("select * from Course")
     List<Course> getAllCourses();
 
+    @Query("select * from Course where username = :name")
+    List<Course> getCoursesForUser(String name);
+
     @Insert
     long addNewCourse(Course course);
 
@@ -40,7 +43,5 @@ public interface TrackerDao {
 
     @Delete
     void deleteCourse(Course course);
-
-
 
 }

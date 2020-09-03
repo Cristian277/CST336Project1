@@ -21,14 +21,14 @@ import androidx.appcompat.widget.Toolbar;
 import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
 
 
 public class ShowCoursesActivity extends AppCompatActivity {
 
-    private static final String SHOWCOURSESACTIVITY = "ShowCoursesActivity";
-
     List<Course> courses;
     Button clear_button;
+    User mUser = MainActivity.mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +60,8 @@ public class ShowCoursesActivity extends AppCompatActivity {
             }
         });
 
-        // get all flights from database and assign to flights array
-        courses = TrackerRoom.getTrackerRoom(this).dao().getAllCourses();
-        Log.d(SHOWCOURSESACTIVITY, "flights count " + courses.size());
+
+        courses = TrackerRoom.getTrackerRoom(this).dao().getCoursesForUser(mUser.getUsername());
 
         ListView courses_view = findViewById(R.id.course_list);
         //Takes in a course arraylist to display

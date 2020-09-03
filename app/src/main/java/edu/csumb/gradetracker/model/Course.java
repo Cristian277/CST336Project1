@@ -9,6 +9,7 @@ public class Course{
     @PrimaryKey(autoGenerate = true)
     private long id;
 
+    private String userName;
     private String instructor;
     private String title;
     private String description;
@@ -18,12 +19,21 @@ public class Course{
     public Course() {}
 
     @Ignore
-    public Course(String instructor, String title, String description, String startDate, String endDate) {
+    public Course(String userName, String instructor, String title, String description, String startDate, String endDate) {
+        this.userName = userName;
         this.instructor = instructor;
         this.title = title;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getInstructor() {

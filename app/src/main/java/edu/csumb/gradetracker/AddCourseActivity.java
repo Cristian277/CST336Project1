@@ -13,18 +13,18 @@ import androidx.appcompat.widget.Toolbar;
 import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
 
 
 public class AddCourseActivity extends AppCompatActivity {
 
-    private static final String ADD_COURSE_ACTIVITY = "AddCourseActivity";
-
-
+    //Have to get the specific logged in user's username to put into the course
     EditText mInstructorName;
     EditText mCourseTitle;
     EditText mCourseDescription;
     EditText mStartDate;
     EditText mEndDate;
+    User mUser = MainActivity.mUser; //GET THE USER THAT'S LOGGED IN
 
     Button addCourseButton;
     Button returnMainMenu;
@@ -77,7 +77,7 @@ public class AddCourseActivity extends AppCompatActivity {
         TrackerDao dao = TrackerRoom.getTrackerRoom(AddCourseActivity.this).dao();
 
         //CREATES A COURSE OBJECT OUT OF OUR INPUT AND INSERTS THROUGH DAO METHOD INSERT
-        Course newCourse = new Course(instructorName,courseTitle,courseDescription,startDate,endDate);
+        Course newCourse = new Course(mUser.getUsername(),instructorName,courseTitle,courseDescription,startDate,endDate);
         dao.addNewCourse(newCourse);
 
         Toast.makeText(this, "Course was added.", Toast.LENGTH_SHORT).show();

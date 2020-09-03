@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
     List<User> mUserList;
     EditText mUserName;
     EditText mPassword;
-
-    public static final String MAINACTIVITY = "MainActivity";
+    static User mUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             if(existingUser.getUsername().equals(username)&&existingUser.getPassword().equals(password)){
 
                 Toast.makeText(this, "User is Valid.", Toast.LENGTH_SHORT).show();
+
+                mUser = existingUser;
 
                 Intent intent = new Intent(MainActivity.this,LoggedInActivity.class);
                 startActivity(intent);

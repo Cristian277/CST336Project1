@@ -18,7 +18,8 @@
         android:scaleX="2"
         android:scaleY="2"
         android:gravity="center"
-        android:text="Hello!"/>
+        android:text="Hello!"
+        android:id="@+id/welcomeMessage" />
 
     <TextView
         android:layout_width="match_parent"
