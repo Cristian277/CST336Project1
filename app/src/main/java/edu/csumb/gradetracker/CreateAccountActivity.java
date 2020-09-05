@@ -22,8 +22,6 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
     EditText mUserName;
     EditText mPassword;
-    EditText mFirstName;
-    EditText mLastName;
     List<User> mUsers;
     int count = 0;
 
@@ -37,8 +35,6 @@ public class CreateAccountActivity  extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Button create_button = findViewById(R.id.create_account_button);
-        mFirstName = findViewById(R.id.firstName);
-        mLastName = findViewById(R.id.lastName);
         mUserName = findViewById(R.id.username); //set to the text typed in
         mPassword = findViewById(R.id.password);
 
@@ -78,8 +74,6 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
         String userName = mUserName.getText().toString();
         String password = mPassword.getText().toString();
-        String firstName = mFirstName.getText().toString();
-        String lastName = mLastName.getText().toString();
 
         int alphabetCountUserName = 0;
         int digitCountUserName = 0;
@@ -165,7 +159,7 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
         if (!inList && userNameCorrect && passwordCorrect) { //if the user is not in the list then a new user is created with the username and password
 
-            User newUser = new User(userName, password,firstName,lastName);
+            User newUser = new User(userName, password);
 
             TrackerDao dao = TrackerRoom.getTrackerRoom(CreateAccountActivity.this).dao();
             dao.addUser(newUser);

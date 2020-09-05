@@ -26,7 +26,6 @@ public interface TrackerDao {
     @Delete
     void deleteUser(User user);
 
-
     //THESE ARE ALL THE FUNCTIONS FOR THE COURSE JAVA CLASS
 
     @Query("select * from Course")

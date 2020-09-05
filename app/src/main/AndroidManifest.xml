@@ -9,8 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name="edu.csumb.gradetracker.MainActivity"
+            android:name=".TestActivity"
+            android:label="Grade Tracker"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.csumb.gradetracker.ShowCoursesActivity"
+            android:name=".ShowCoursesActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -30,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.csumb.gradetracker.AddCourseActivity"
+            android:name=".AddCourseActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -40,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.csumb.gradetracker.CreateAccountActivity"
+            android:name=".CreateAccountActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -50,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.csumb.gradetracker.LoggedInActivity"
+            android:name=".LoggedInActivity"
             android:label="Grade Tracker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

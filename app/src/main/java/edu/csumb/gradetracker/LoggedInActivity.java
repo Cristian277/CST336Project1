@@ -23,7 +23,7 @@ public class LoggedInActivity extends AppCompatActivity {
 
         mDisplayName = findViewById(R.id.welcomeMessage);
 
-        mDisplayName.setText("Hello " + mUser.getFirstName() + "!");
+        mDisplayName.setText("Hello " + mUser.getUsername() + "!");
 
         //TAKES USER TO ADD COURSES ACTIVITY
         Button add_courses_button = findViewById(R.id.add_courses_button);
