@@ -1,5 +1,6 @@
 package edu.csumb.gradetracker.model;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -9,11 +10,22 @@ public class Course{
     @PrimaryKey(autoGenerate = true)
     private long id;
 
+    @ColumnInfo(name = "userName")
     private String userName;
+
+    @ColumnInfo(name = "instructor")
     private String instructor;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "startDate")
     private String startDate;
+
+    @ColumnInfo(name = "endDate")
     private String endDate;
 
     public Course() {}

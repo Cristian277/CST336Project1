@@ -20,6 +20,8 @@ public class Assignment {
     @ColumnInfo(name = "Max Score")
     private long maxScore;
 
+    public Assignment() {}
+
     @Ignore
     public Assignment(String dueDate, long earnedScore, long maxScore){
         this.dueDate = dueDate;
