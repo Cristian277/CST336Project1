@@ -5,8 +5,6 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-//TEST THIS SHIT
-
 @Entity
 public class Course{
     @PrimaryKey(autoGenerate = true)
