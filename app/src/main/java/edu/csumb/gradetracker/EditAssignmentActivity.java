@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-//6.	Assignment
-//        a.	Shows the assignment detail, score, etc.
-//        b.	Should be able to edit the assignment values
+//7.	Add/Edit/Delete Assignment
+//        a.	Users will be able to add assignments to a course
+//        b.	User will be able to change the values of existing courses
+
 
 public class EditAssignmentActivity extends AppCompatActivity {
 
