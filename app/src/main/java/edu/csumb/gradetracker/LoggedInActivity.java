@@ -60,7 +60,13 @@ public class LoggedInActivity extends AppCompatActivity {
 
         //TODO: Implement another class called
         // 3.	Edit User: Similar to the 'User' Activity but it will allow the user to edit their details
-        // - Needs another button added to this activity to launch EditUser.class
+        // - Needs another button added to this activity to launch EditUserActivity.class
+
+        //TODO: Implement ShowAssignmentsActivity.class
+        // - Need to add a button to launch intent
+
+        //TODO: Implement EditAssignmentActivity.class
+        // - Need to add a button to launch intent
 
 
 
