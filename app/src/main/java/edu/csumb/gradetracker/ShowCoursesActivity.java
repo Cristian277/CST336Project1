@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -29,6 +30,7 @@ public class ShowCoursesActivity extends AppCompatActivity {
     List<Course> courses;
     Button clear_button;
     User mUser = MainActivity.mUser;
+    static Course mCourse = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,16 @@ public class ShowCoursesActivity extends AppCompatActivity {
         ListView courses_view = findViewById(R.id.course_list);
         //Takes in a course arraylist to display
         courses_view.setAdapter(new CourseListAdapter( this,courses) );
+
+        courses_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //make course object = the course at i which is the box clicked
+                mCourse = courses.get(position);
+                Intent intent = new Intent(getApplicationContext(),EditCourseActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //DELETES ALL COURSES
