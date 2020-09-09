@@ -48,7 +48,7 @@ public class ShowCoursesActivity extends AppCompatActivity {
 
                 clearCourses();
                 Toast.makeText(ShowCoursesActivity.this, "Courses have been cleared.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ShowCoursesActivity.this,MainActivity.class);
+                Intent intent = new Intent(ShowCoursesActivity.this,LoggedInActivity.class);
                 startActivity(intent);
 
             }
