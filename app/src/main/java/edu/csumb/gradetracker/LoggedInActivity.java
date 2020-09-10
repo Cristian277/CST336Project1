@@ -58,6 +58,16 @@ public class LoggedInActivity extends AppCompatActivity {
             }
         });
 
+        Button change_password_button = findViewById(R.id.change_password_button);
+
+        change_password_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoggedInActivity.this,EditUserActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //TODO: Implement another class called
         // 3.	Edit User: Similar to the 'User' Activity but it will allow the user to edit their details
         // - Needs another button added to this activity to launch EditUserActivity.class

@@ -43,6 +43,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:gravity="center_horizontal"
+        android:id="@+id/change_password_button" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="LOGOUT"
         android:gravity="center_horizontal"
         android:id="@+id/log_out_button" />
