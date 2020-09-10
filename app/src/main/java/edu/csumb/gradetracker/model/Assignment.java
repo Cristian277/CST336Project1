@@ -20,10 +20,17 @@ public class Assignment {
     @ColumnInfo(name = "Max Score")
     private long maxScore;
 
+<<<<<<< HEAD
 //    @ColumnInfo(name = "Assignment name")
     private String assignmentName;
 
 //    @ColumnInfo(name = "course title")
+=======
+    @ColumnInfo(name = "Assignment Name")
+    private String assignmentName;
+
+    @ColumnInfo(name = "Course Title")
+>>>>>>> 25046b11cb5e1fd226cf4311dde1e197cfe774e9
     private String courseTitle;
 
     public Assignment() {}
