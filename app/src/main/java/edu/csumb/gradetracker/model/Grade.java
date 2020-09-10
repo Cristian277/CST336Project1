@@ -78,6 +78,14 @@ public class Grade {
         this.gradeID = gradeID;
     }
 
+    public String getDateEarned() {
+        return dateEarned;
+    }
+
+    public void setDateEarned(String dateEarned) {
+        this.dateEarned = dateEarned;
+    }
+
     @Override
     public String toString() {
         return "Grade{" +

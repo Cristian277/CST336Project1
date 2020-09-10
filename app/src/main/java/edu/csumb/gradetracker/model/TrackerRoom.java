@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-@Database(entities={User.class,Course.class}, version=1)
+@Database(entities={User.class,Course.class,Assignment.class,Grade.class}, version=1)
 @TypeConverters({DateTypeConverter.class})
 
 public abstract class TrackerRoom extends RoomDatabase {

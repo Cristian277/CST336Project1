@@ -27,76 +27,53 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Instructor Name"/>
+        android:text="Title"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:id="@+id/instructor_name" />
+        android:id="@+id/assignmentName" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Title"/>
+        android:text="Due Date"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/course_title" />
+        android:id="@+id/due_date" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Description " />
+        android:text="Earned Score " />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/description" />
+        android:id="@+id/earned_score" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Date" />
+        android:text="Max Score" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/start_date" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="End Date" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/end_date" />
+        android:id="@+id/max_score" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit Edit"
+        android:text="Submit"
         android:id="@+id/submit_button" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Assignments"
-        android:id="@+id/view_assignment_button" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Course"
-        android:id="@+id/delete_button" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Return to Courses"
+        android:text="Return to Main Menu"
         android:id="@+id/return_button" />
 
 </LinearLayout>

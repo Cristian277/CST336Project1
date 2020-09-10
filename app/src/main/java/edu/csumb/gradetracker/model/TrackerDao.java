@@ -43,4 +43,21 @@ public interface TrackerDao {
     @Delete
     void deleteCourse(Course course);
 
+    //THESE ARE ALL THE FUNCTIONS FOR THE ASSIGNMENT CLASS
+    @Query("select * from Assignment")
+    List<Assignment> getAllAssignments();
+
+    @Query("select * from Assignment where courseTitle = :courseTitle")
+    List<Assignment> getAssignmentsForCourse(String courseTitle);
+
+    @Insert
+    long addNewAssignment(Assignment assignment);
+
+    @Update
+    int updateAssignment(Assignment assignment);
+
+    @Delete
+    void deleteAssignment(Assignment assignment);
+
+
 }

@@ -27,8 +27,9 @@ public class EditCourseActivity extends AppCompatActivity {
     EditText mEndDate;
 
     Button submitButton;
-    Button returnMainMenu;
+    Button returnToCourses;
     Button deleteButton;
+    Button viewAssignmentsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +44,10 @@ public class EditCourseActivity extends AppCompatActivity {
         mStartDate = findViewById(R.id.start_date);
         mEndDate = findViewById(R.id.end_date);
 
-        returnMainMenu = findViewById(R.id.return_button);
+        returnToCourses = findViewById(R.id.return_button);
         deleteButton = findViewById(R.id.delete_button);
         submitButton = findViewById(R.id.submit_button);
+        viewAssignmentsButton = findViewById(R.id.view_assignment_button);
 
         mInstructorName.setHint(mCourse.getInstructor());
         mCourseTitle.setHint(mCourse.getTitle());
@@ -60,6 +62,14 @@ public class EditCourseActivity extends AppCompatActivity {
             }
         });
 
+        viewAssignmentsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditCourseActivity.this,ShowAssignmentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,13 +77,15 @@ public class EditCourseActivity extends AppCompatActivity {
             }
         });
 
-        returnMainMenu.setOnClickListener(new View.OnClickListener() {
+        returnToCourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditCourseActivity.this,LoggedInActivity.class);
+                Intent intent = new Intent(EditCourseActivity.this,ShowCoursesActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
     boolean submitEdit(){
 

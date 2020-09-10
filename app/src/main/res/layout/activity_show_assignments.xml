@@ -31,6 +31,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Add Assignment"
+        android:id="@+id/add_assignment_button" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Clear All Assignments"
         android:id="@+id/clear_assignments_button" />
 

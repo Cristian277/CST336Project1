@@ -20,13 +20,35 @@ public class Assignment {
     @ColumnInfo(name = "Max Score")
     private long maxScore;
 
+    private String assignmentName;
+
+    private String courseTitle;
+
     public Assignment() {}
 
     @Ignore
-    public Assignment(String dueDate, long earnedScore, long maxScore){
+    public Assignment(String courseTitle, String assignmentName, String dueDate, long earnedScore, long maxScore){
+        this.assignmentName = assignmentName;
+        this.courseTitle = courseTitle;
         this.dueDate = dueDate;
         this.earnedScore = earnedScore;
         this.maxScore = maxScore;
+    }
+
+    public String getAssignmentName() {
+        return assignmentName;
+    }
+
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = assignmentName;
+    }
+
+    public String getCourseTitle() {
+        return courseTitle;
+    }
+
+    public void setCourseTitle(String courseTitle) {
+        this.courseTitle = courseTitle;
     }
 
     public long getId() {
