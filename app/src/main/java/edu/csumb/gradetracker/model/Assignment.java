@@ -20,8 +20,10 @@ public class Assignment {
     @ColumnInfo(name = "Max Score")
     private long maxScore;
 
+//    @ColumnInfo(name = "Assignment name")
     private String assignmentName;
 
+//    @ColumnInfo(name = "course title")
     private String courseTitle;
 
     public Assignment() {}
@@ -43,13 +45,9 @@ public class Assignment {
         this.assignmentName = assignmentName;
     }
 
-    public String getCourseTitle() {
-        return courseTitle;
-    }
+    public String getCourseTitle() { return courseTitle; }
 
-    public void setCourseTitle(String courseTitle) {
-        this.courseTitle = courseTitle;
-    }
+    public void setCourseTitle(String courseTitle) { this.courseTitle = courseTitle; }
 
     public long getId() {
         return id;

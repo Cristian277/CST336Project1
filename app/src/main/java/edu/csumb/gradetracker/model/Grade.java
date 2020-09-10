@@ -90,11 +90,11 @@ public class Grade {
     public String toString() {
         return "Grade{" +
                 "id=" + id +
-                ", score=" + score +
-                ", assignmentID=" + assignmentID +
-                ", studentID=" + studentID +
-                ", dateEarned='" + dateEarned + '\'' +
-                ", gradeID=" + gradeID +
+                ", score= " + score +
+                ", assignmentID = " + assignmentID +
+                ", studentID = " + studentID +
+                ", dateEarned = " + dateEarned + '\'' +
+                ", gradeID = " + gradeID +
                 '}';
     }
 }//class

@@ -30,9 +30,9 @@
         android:text="Title"/>
 
     <EditText
+        android:id="@+id/course_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/assignmentName" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="match_parent"
@@ -65,15 +65,28 @@
         android:id="@+id/max_score" />
 
     <Button
+        android:id="@+id/submit_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit_button" />
+        android:text="ADD ASSIGNMENT" />
 
     <Button
+        android:id="@+id/return_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Return to Main Menu"
-        android:id="@+id/return_button" />
+        android:text="Return to Main Menu" />
+
+    <EditText
+        android:id="@+id/assignmentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="assignment name" />
 
 </LinearLayout>

@@ -88,5 +88,4 @@ public class AddCourseActivity extends AppCompatActivity {
         return true;
     }
 
-
 }
