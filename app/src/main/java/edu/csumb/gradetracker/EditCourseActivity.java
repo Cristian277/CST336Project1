@@ -87,8 +87,23 @@ public class EditCourseActivity extends AppCompatActivity {
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditCourseActivity.this).dao();
 
         //CREATES A COURSE OBJECT OUT OF OUR INPUT AND INSERTS THROUGH DAO METHOD INSERT
-        Course newCourse = new Course(mUser.getUsername(),instructorName,courseTitle,courseDescription,startDate,endDate);
-        dao.updateCourse(newCourse);
+        if(!instructorName.isEmpty()){
+            mCourse.setInstructor(instructorName);
+        }
+        if(!courseTitle.isEmpty()){
+            mCourse.setTitle(courseTitle);
+        }
+        if(!courseDescription.isEmpty()){
+            mCourse.setDescription(courseDescription);
+        }
+        if(!startDate.isEmpty()){
+            mCourse.setStartDate(startDate);
+        }
+        if(!endDate.isEmpty()){
+            mCourse.setEndDate(endDate);
+        }
+
+        dao.updateCourse(mCourse);
 
         Toast.makeText(this, "Course was updated.", Toast.LENGTH_SHORT).show();
 
