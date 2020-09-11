@@ -11,16 +11,16 @@ public class Assignment {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    @ColumnInfo(name = "Due Date")
+    @ColumnInfo(name = "dueDate")
     private String dueDate;
 
-    @ColumnInfo(name = "Earned Score")
+    @ColumnInfo(name = "earnedScore")
     private long earnedScore;
 
-    @ColumnInfo(name = "Max Score")
+    @ColumnInfo(name = "maxScore")
     private long maxScore;
 
-    @ColumnInfo(name = "Assignment name")
+    @ColumnInfo(name = "assignmentName")
     private String assignmentName;
 
     @ColumnInfo(name = "courseTitle")

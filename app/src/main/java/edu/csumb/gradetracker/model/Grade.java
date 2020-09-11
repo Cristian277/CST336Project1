@@ -21,7 +21,7 @@ public class Grade {
     @ColumnInfo(name = "studentID")
     private int studentID;
 
-    @ColumnInfo(name = "date earned")
+    @ColumnInfo(name = "dateEarned")
     private String dateEarned;
 
     @ColumnInfo(name = "gradeID")
