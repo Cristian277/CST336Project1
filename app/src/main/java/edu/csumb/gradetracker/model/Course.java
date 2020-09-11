@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Course{
+
     @PrimaryKey(autoGenerate = true)
     private long id;
 

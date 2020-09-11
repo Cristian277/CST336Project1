@@ -28,10 +28,9 @@ public class Assignment {
 
     public Assignment() {}
 
-    //Comment
-
     @Ignore
     public Assignment(String courseTitle, String assignmentName, String dueDate, long earnedScore, long maxScore){
+        this.courseTitle=courseTitle;
         this.assignmentName = assignmentName;
         this.courseTitle = courseTitle;
         this.dueDate = dueDate;
@@ -81,5 +80,11 @@ public class Assignment {
 
     public void setMaxScore(long maxScore) {
         this.maxScore = maxScore;
+    }
+
+    @Override
+    public String toString() {
+        return "Title: " + assignmentName + "\n" + "Due Date:  "+ dueDate + "\n" + "Earned Score: "+
+                earnedScore + "\n" + "Max Score: " + maxScore + "\n";
     }
 }

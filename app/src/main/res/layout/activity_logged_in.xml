@@ -54,17 +54,5 @@
         android:gravity="center_horizontal"
         android:text="LOGOUT" />
 
-    <Button
-        android:id="@+id/addAssignmentBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="add assignment" />
-
-    <Button
-        android:id="@+id/showAsmtBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="show assignments" />
-
 
 </LinearLayout>

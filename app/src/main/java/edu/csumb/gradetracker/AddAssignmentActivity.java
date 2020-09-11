@@ -9,9 +9,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 import edu.csumb.gradetracker.model.Assignment;
+import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
 
 
 public class AddAssignmentActivity extends AppCompatActivity {
@@ -25,12 +29,16 @@ public class AddAssignmentActivity extends AppCompatActivity {
     Button mSubmitButton;
     Button mReturnButton;
 
+    User mUser = MainActivity.mUser;
+    static Course mCourse = ShowCoursesActivity.mCourse;
+    static  Assignment mAssignment = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_assignment);
 
-        mAssignmentName = findViewById(R.id.assignmentName);
+        mAssignmentName = findViewById(R.id.assignmentTitle);
         mDueDate = findViewById(R.id.due_date);
         mEarnedScore = findViewById(R.id.earned_score);
         mMaxScore = findViewById(R.id.max_score);
@@ -56,18 +64,17 @@ public class AddAssignmentActivity extends AppCompatActivity {
     }
 
     boolean addNewAssignment(){
+
         String assignmentName = mAssignmentName.getText().toString();
         String dueDate = mDueDate.getText().toString();
-        String courseTitle = mCourseTitle.getText().toString();
 
         long earnedScore = Long.parseLong(mEarnedScore.getText().toString());
         long maxScore = Long.parseLong(mMaxScore.getText().toString());
-
         //GET ACCESS TO THE DAO
         TrackerDao dao = TrackerRoom.getTrackerRoom(AddAssignmentActivity.this).dao();
 
         //CREATES AN ASSIGNMENT OBJECT OUT OF OUR INPUT AND INSERTS THROUGH THE DAO METHOD INSERT
-        Assignment assignment = new Assignment(courseTitle,assignmentName,dueDate,earnedScore,maxScore);
+        Assignment assignment = new Assignment(mCourse.getTitle(),assignmentName,dueDate,earnedScore,maxScore);
         dao.addNewAssignment(assignment);
 
         Toast.makeText(this, "Assignment was added.", Toast.LENGTH_SHORT).show();
