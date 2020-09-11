@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "174f4e567b8075470d48c6a83c6fc16e",
+    "identityHash": "b777fcab87881ebc74dd6157a012c441",
     "entities": [
       {
         "tableName": "User",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "Assignment",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Due Date` TEXT, `Earned Score` INTEGER NOT NULL, `Max Score` INTEGER NOT NULL, `Assignment name` TEXT, `courseTitle` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dueDate` TEXT, `earnedScore` INTEGER NOT NULL, `maxScore` INTEGER NOT NULL, `assignmentName` TEXT, `courseTitle` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -104,25 +104,25 @@
           },
           {
             "fieldPath": "dueDate",
-            "columnName": "Due Date",
+            "columnName": "dueDate",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "earnedScore",
-            "columnName": "Earned Score",
+            "columnName": "earnedScore",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
             "fieldPath": "maxScore",
-            "columnName": "Max Score",
+            "columnName": "maxScore",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
             "fieldPath": "assignmentName",
-            "columnName": "Assignment name",
+            "columnName": "assignmentName",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -144,7 +144,7 @@
       },
       {
         "tableName": "Grade",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `score` INTEGER NOT NULL, `assignmentID` INTEGER NOT NULL, `studentID` INTEGER NOT NULL, `date earned` TEXT, `gradeID` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `score` INTEGER NOT NULL, `assignmentID` INTEGER NOT NULL, `studentID` INTEGER NOT NULL, `dateEarned` TEXT, `gradeID` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -172,7 +172,7 @@
           },
           {
             "fieldPath": "dateEarned",
-            "columnName": "date earned",
+            "columnName": "dateEarned",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -196,7 +196,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '174f4e567b8075470d48c6a83c6fc16e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b777fcab87881ebc74dd6157a012c441')"
     ]
   }
 }
