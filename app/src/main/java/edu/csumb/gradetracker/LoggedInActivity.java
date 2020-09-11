@@ -25,26 +25,6 @@ public class LoggedInActivity extends AppCompatActivity {
 
         mDisplayName.setText("Hello " + mUser.getUsername() + "!");
 
-        //TAKE USER TO SHOW ASSIGNMENTS ACTIVITY
-        Button show_assignment_btn = findViewById(R.id.showAsmtBtn);
-        show_assignment_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoggedInActivity.this, ShowAssignmentsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //TAKE THE USER TO ADD ASSIGNMENTS ACTIVITY
-        Button add_assignment_btn = findViewById(R.id.addAssignmentBtn);
-        add_assignment_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoggedInActivity.this, AddAssignmentActivity.class);
-                startActivity(intent);
-            }
-        });
-
         //TAKES USER TO ADD COURSES ACTIVITY
         Button add_courses_button = findViewById(R.id.add_courses_button);
 

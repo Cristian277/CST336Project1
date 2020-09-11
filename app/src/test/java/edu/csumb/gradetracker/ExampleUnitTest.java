@@ -1,6 +1,14 @@
 package edu.csumb.gradetracker;
 
+import android.widget.TextView;
+
 import org.junit.Test;
+
+import java.util.List;
+
+import edu.csumb.gradetracker.model.TrackerDao;
+import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
 
 import static org.junit.Assert.*;
 
@@ -14,4 +22,6 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+
 }

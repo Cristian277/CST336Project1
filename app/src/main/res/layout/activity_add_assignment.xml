@@ -30,9 +30,11 @@
         android:text="Title"/>
 
     <EditText
-        android:id="@+id/course_title"
+        android:id="@+id/assignmentTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="match_parent"
@@ -76,17 +78,6 @@
         android:layout_height="wrap_content"
         android:text="Return to Main Menu" />
 
-    <EditText
-        android:id="@+id/assignmentName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="assignment name" />
 
 </LinearLayout>
