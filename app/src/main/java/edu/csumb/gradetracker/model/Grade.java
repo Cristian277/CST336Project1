@@ -28,6 +28,7 @@ public class Grade {
     private int gradeID;
 
     public Grade(){}
+    //Something
 
     @Ignore
     public Grade(int score, int assignmentID, int studentID, String dateEarned, int gradeID) {
