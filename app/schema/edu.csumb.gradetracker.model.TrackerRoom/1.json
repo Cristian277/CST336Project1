@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e1512c97359c5822c7db0095e55b5884",
+    "identityHash": "8708e135bdd24e156fa70911432373f6",
     "entities": [
       {
         "tableName": "User",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "Assignment",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Due Date` TEXT, `Earned Score` INTEGER NOT NULL, `Max Score` INTEGER NOT NULL, `assignmentName` TEXT, `courseTitle` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Due Date` TEXT, `Earned Score` INTEGER NOT NULL, `Max Score` INTEGER NOT NULL, `Assignment name` TEXT, `Course Title` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -122,13 +122,13 @@
           },
           {
             "fieldPath": "assignmentName",
-            "columnName": "assignmentName",
+            "columnName": "Assignment name",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "courseTitle",
-            "columnName": "courseTitle",
+            "columnName": "Course Title",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -196,7 +196,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e1512c97359c5822c7db0095e55b5884')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8708e135bdd24e156fa70911432373f6')"
     ]
   }
 }
