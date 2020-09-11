@@ -17,8 +17,9 @@ import static org.junit.Assert.*;
  */
 
 //TODO: Test to see if the database works
-    
-
+//TODO: Test getters and setters of functions
+//TODO: Test inserting into database
+//TODO: https://developer.android.com/studio/test
 
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
@@ -26,7 +27,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("edu.csumb.flightapp", appContext.getPackageName());
+        assertEquals("edu.csumb.gradetracker", appContext.getPackageName());
     }
-}
+ }
