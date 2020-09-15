@@ -42,7 +42,6 @@ public class CourseTest {
         db.close();
     }
 
-
     @Test
     public void insertCourse(){
 

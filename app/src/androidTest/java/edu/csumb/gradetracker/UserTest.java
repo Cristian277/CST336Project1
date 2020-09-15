@@ -33,6 +33,7 @@ public class UserTest {
 
     private static TrackerDao trackerDao;
     private static TrackerRoom db;
+    private static User user;
 
     //Creates a database in memory with the context of the database on file
     @Before
@@ -42,24 +43,46 @@ public class UserTest {
             trackerDao = db.getTrackerRoom(context).dao();
     }
 
-    @After
-    public void closeDb() throws IOException{
-        db.close();
+    @Test
+    public void useAppContext() {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        assertEquals("edu.csumb.gradetracker", appContext.getPackageName());
     }
 
     //Checks if we can add users to the database
     @Test
-    public void insertUser(){
-        User user = new User("testUserName","testPassword" );
+    public void insertUserTest(){
+        user = new User("testUsername","testPassword" );
         trackerDao.addUser(user);
-        assertEquals("testUserName", user.getUsername());
+        assertEquals("testUsername", user.getUsername());
         assertEquals("testPassword", user.getPassword());
-//        assertEquals("testrName", user.getUsername()); It fails, which means it works!
+
+        //Chain Start_____________________________________________________________
+    }
+
+    @Test
+    public void getUsernameTest(){
+        assertEquals("testUsername", user.getUsername());
+    }
+
+    @Test
+    public void getPasswordTest(){
+        assertEquals("testPassword", user.getPassword());
+    }
+
+    @Test
+    public void getIdTest(){
+        assertEquals(0, user.getId());
+    }
+
+    //Not sure how to update
+    @Test
+    public void setPasswordTest(){
+
     }
 
 
-    //TODO: deleteUser test not done yet. What am I checking against when the user gets deleted?
-    //TODO: Maybe use a list and decrement the number of users in the list after deletion
 
     //Checks if we can delete users from the database
     @Test
@@ -69,15 +92,22 @@ public class UserTest {
         List<User> users = trackerDao.getAllUsers();
         assertEquals("testUsername", user.getUsername());
         trackerDao.deleteUser(user);
-        
+        //TODO: deleteUser test not done yet. What am I checking against when the user gets deleted?
+        //TODO: Maybe use a list and decrement the number of users in the list after deletion
     }
 
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("edu.csumb.gradetracker", appContext.getPackageName());
+    @After
+    public void closeDb() throws IOException{
+        db.close();
     }
+
+
+
+
+
+
+    //
+
 //    @Test
 //    public void testTest(){
 //        User user = new User("testUsername","testPassword" );
