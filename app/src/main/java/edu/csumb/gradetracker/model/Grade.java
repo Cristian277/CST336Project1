@@ -6,7 +6,6 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
-
 public class Grade {
 
     @PrimaryKey(autoGenerate = true)

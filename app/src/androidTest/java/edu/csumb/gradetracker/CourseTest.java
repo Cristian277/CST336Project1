@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 
 import java.io.IOException;
 
+import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
 
@@ -28,6 +29,7 @@ import edu.csumb.gradetracker.model.TrackerRoom;
 public class CourseTest {
     private static TrackerDao trackerDao;
     private static TrackerRoom db;
+    private static Course course;
 
     //Creates a database in memory with the context of the database on file
     @Before
@@ -37,19 +39,20 @@ public class CourseTest {
         trackerDao = db.getTrackerRoom(context).dao();
     }
 
-    @After
-    public void closeDb() throws IOException {
-        db.close();
-    }
 
     @Test
     public void insertCourse(){
-
+        course = new Course();
     }
 
     @Test
     public void deleteCourse(){
 
+    }
+
+    @After
+    public void closeDb() throws IOException {
+        db.close();
     }
 
 
