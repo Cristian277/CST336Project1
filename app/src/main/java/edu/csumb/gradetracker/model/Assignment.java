@@ -28,8 +28,6 @@ public class Assignment {
 
     public Assignment() {}
 
-    //comment check
-
     @Ignore
     public Assignment(String courseTitle, String assignmentName, String dueDate, long earnedScore, long maxScore){
         this.courseTitle=courseTitle;

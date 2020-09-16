@@ -40,15 +40,12 @@ public class CreateAccountActivity  extends AppCompatActivity {
         mUserName = findViewById(R.id.username); //set to the text typed in
         mPassword = findViewById(R.id.password);
 
-        userName = mUserName.getText().toString();
-        password = mPassword.getText().toString();
-
         create_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(!validateUser()) count++;
-                if(count==2){
+                if(count==4){
 
                     count=0;
 
@@ -75,94 +72,15 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
     boolean validateUser() {
 
-        int alphabetCountUserName = 0;
-        int digitCountUserName = 0;
-
-        int alphabetCountPassword = 0;
-        int digitCountPassword = 0;
-
-        int specialCharacterUser = 0;
-        int specialCharacterPassword = 0;
-
-        boolean userNameCorrect = false;
-        boolean passwordCorrect = false;
-
-        boolean hasUppercasePass = !password.equals(password.toLowerCase());
-        boolean hasLowercasePass = !password.equals(password.toUpperCase());
-
-        boolean hasUppercaseUser = !userName.equals(userName.toLowerCase());
-        boolean hasLowercaseUser = !userName.equals(userName.toUpperCase());
+        userName = mUserName.getText().toString();
+        password = mPassword.getText().toString();
 
         if (userName.isEmpty() || password.isEmpty()) {
 
             Toast.makeText(getApplicationContext(), "Empty Entry.", Toast.LENGTH_SHORT).show();
-
-        } else {
-
-            //Username_________________________________________________________________________________________________________________________-
-            for (int x = 0; x < userName.length(); x++) {
-
-                if (userName.charAt(x) >= 65 && userName.charAt(x) <= 90 || (userName.charAt(x) >= 97 && userName.charAt(x) <= 122)) {
-                    alphabetCountUserName++;
-                } else if (userName.charAt(x) >= 48 && userName.charAt(x) <= 57) {
-                    digitCountUserName++;
-                }
-            }
-
-            //We can put the if statement below into the top for loop to check everything in one run
-            for (int x = 0; x < userName.length(); x++) {
-
-                if (userName.charAt(x) == '!' || userName.charAt(x) == '@' || (userName.charAt(x) == '#' || userName.charAt(x) == '$')) {
-                    specialCharacterUser++;
-                }
-            }
-            //Password_____________________________________________________________________________________________________________________________
-            for (int x = 0; x < password.length(); x++) {
-
-                if (password.charAt(x) >= 65 && password.charAt(x) <= 90 || (password.charAt(x) >= 97 && password.charAt(x) <= 122)) {
-                    alphabetCountPassword++;
-                } else if (password.charAt(x) >= 48 && password.charAt(x) <= 57) {
-                    digitCountPassword++;
-                }
-            }
-
-            //We can put the if statement below into the top for loop to check everything in one run
-            for (int x = 0; x < password.length(); x++) {
-
-                if (password.charAt(x) == '!' || password.charAt(x) == '@' || (password.charAt(x) == '#' || password.charAt(x) == '$')) {
-                    specialCharacterPassword++;
-                }
-            }
-            //Final bool check_________________________________________________________________________________________________________________
-            if (alphabetCountUserName > 0 && digitCountUserName > 0 && specialCharacterUser > 0 && hasUppercaseUser && hasLowercaseUser) {
-                userNameCorrect = true;
-            } else {
-                Toast.makeText(getApplicationContext(), "Invalid Username.", Toast.LENGTH_SHORT).show();
-            }
-
-            if (alphabetCountPassword > 0 && digitCountPassword >0 && specialCharacterPassword > 0 && hasUppercasePass && hasLowercasePass) {
-                passwordCorrect = true;
-            } else {
-                Toast.makeText(getApplicationContext(), "Invalid Password.", Toast.LENGTH_SHORT).show();
-            }
-
         }
 
-
-        //Checks to see if the user is in the database already____________________________________________________________________________________________
-        //We can throw this in its own function
-        mUsers = TrackerRoom.getTrackerRoom(CreateAccountActivity.this).dao().getAllUsers(); //get all logs
-        boolean inList = false;
-
-        for (User existingUser : mUsers) { //check records for duplicates
-            if (existingUser.getUsername().equals(userName)) {
-                Toast.makeText(getApplicationContext(), "Username already exists, please try again.", Toast.LENGTH_SHORT).show();
-                inList = true;
-                break;
-            }
-        }
-
-        if (!inList && userNameCorrect && passwordCorrect) { //if the user is not in the list then a new user is created with the username and password
+        if(checkCharacters(userName)&&checkCharacters(password)&&!userInDatabase(userName)){
 
             User newUser = new User(userName, password);
 
@@ -174,9 +92,60 @@ public class CreateAccountActivity  extends AppCompatActivity {
             Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
 
             startActivity(intent); //returns to main menu
+
             return true;
+
+        }
+        return false;
+    }
+
+    boolean checkCharacters(String userNameOrPassword){
+
+        int alphabetCount = 0;
+        int digitCount = 0;
+
+        int specialCharacter = 0;
+
+        boolean hasUppercase = !userNameOrPassword.equals(userNameOrPassword.toLowerCase());
+        boolean hasLowercase = !userNameOrPassword.equals(userNameOrPassword.toUpperCase());
+
+        boolean userNameCorrect = false;
+        boolean passwordCorrect = false;
+
+        for (int x = 0; x < userNameOrPassword.length(); x++) {
+
+            if (userNameOrPassword.charAt(x) >= 65 && userNameOrPassword.charAt(x) <= 90 || (userNameOrPassword.charAt(x) >= 97 && userNameOrPassword.charAt(x) <= 122)) {
+                alphabetCount++;
+            } else if (userNameOrPassword.charAt(x) >= 48 && userNameOrPassword.charAt(x) <= 57) {
+                digitCount++;
+            }
         }
 
+        for (int x = 0; x < userName.length(); x++) {
+
+            if (userNameOrPassword.charAt(x) == '!' || userNameOrPassword.charAt(x) == '@' || (userNameOrPassword.charAt(x) == '#' || userNameOrPassword.charAt(x) == '$')) {
+                specialCharacter++;
+            }
+        }
+
+        if (alphabetCount > 0 && digitCount > 0 && specialCharacter > 0 && hasUppercase && hasLowercase) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Invalid Username.", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
+
+    boolean userInDatabase(String userName){
+
+        mUsers = TrackerRoom.getTrackerRoom(CreateAccountActivity.this).dao().getAllUsers(); //get all logs
+
+        for (User existingUser : mUsers) { //check records for duplicates
+            if (existingUser.getUsername().equals(userName)) {
+                Toast.makeText(getApplicationContext(), "Username already exists, please try again.", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        }
         return false;
     }
 

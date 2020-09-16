@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
         Button test_db_button = findViewById(R.id.test_db_button);
 
         test_db_button.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+         */
     }
 
     //CHECK USER
