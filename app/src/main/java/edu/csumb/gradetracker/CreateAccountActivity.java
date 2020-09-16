@@ -24,8 +24,6 @@ public class CreateAccountActivity  extends AppCompatActivity {
     EditText mPassword;
     List<User> mUsers;
     int count = 0;
-    String userName;
-    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +70,8 @@ public class CreateAccountActivity  extends AppCompatActivity {
 
     boolean validateUser() {
 
-        userName = mUserName.getText().toString();
-        password = mPassword.getText().toString();
+        String userName = mUserName.getText().toString();
+        String password = mPassword.getText().toString();
 
         if (userName.isEmpty() || password.isEmpty()) {
 
@@ -121,7 +119,7 @@ public class CreateAccountActivity  extends AppCompatActivity {
             }
         }
 
-        for (int x = 0; x < userName.length(); x++) {
+        for (int x = 0; x <userNameOrPassword.length(); x++) {
 
             if (userNameOrPassword.charAt(x) == '!' || userNameOrPassword.charAt(x) == '@' || (userNameOrPassword.charAt(x) == '#' || userNameOrPassword.charAt(x) == '$')) {
                 specialCharacter++;

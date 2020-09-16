@@ -74,12 +74,5 @@
         android:gravity="center_horizontal"
         android:id="@+id/create_account_button" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Test Database (Development Only)"
-        android:gravity="center_horizontal"
-        android:id="@+id/test_db_button" />
-
 
 </LinearLayout>
