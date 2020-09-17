@@ -20,6 +20,8 @@ import edu.csumb.gradetracker.model.TrackerRoom;
 import edu.csumb.gradetracker.model.User;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 /*
     1. Insert and Test a User in the Database
@@ -57,31 +59,33 @@ public class UserTest {
         trackerDao.addUser(user);
         assertEquals("testUsername", user.getUsername());
         assertEquals("testPassword", user.getPassword());
-
-        //Chain Start_____________________________________________________________
     }
 
     @Test
     public void getUsernameTest(){
+        user = new User("testUsername", "testPassword");
         assertEquals("testUsername", user.getUsername());
     }
 
     @Test
+    public void setPasswordTest(){
+        user = new User("testUsername", "testPassword");
+        assertEquals("testPassword", user.getPassword());
+        user.setPassword("passwordChange");
+        assertNotEquals("testUsername", user.getPassword());
+    }
+
+    @Test
     public void getPasswordTest(){
+        user = new User("testUsername", "testPassword");
         assertEquals("testPassword", user.getPassword());
     }
 
     @Test
     public void getIdTest(){
+        user = new User("testUsername", "testPassword");
         assertEquals(0, user.getId());
     }
-
-    //Not sure how to update
-    @Test
-    public void setPasswordTest(){
-
-    }
-
 
 
     //Checks if we can delete users from the database
@@ -92,8 +96,7 @@ public class UserTest {
         List<User> users = trackerDao.getAllUsers();
         assertEquals("testUsername", user.getUsername());
         trackerDao.deleteUser(user);
-        //TODO: deleteUser test not done yet. What am I checking against when the user gets deleted?
-        //TODO: Maybe use a list and decrement the number of users in the list after deletion
+        assertNotEquals("1", users.size());
     }
 
     @After

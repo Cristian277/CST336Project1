@@ -16,6 +16,9 @@ import java.io.IOException;
 import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
+
+import static org.junit.Assert.assertEquals;
 
 /*
     1. Insert and Test a Course in the Database
@@ -30,6 +33,7 @@ public class CourseTest {
     private static TrackerDao trackerDao;
     private static TrackerRoom db;
     private static Course course;
+    private static User user;
 
     //Creates a database in memory with the context of the database on file
     @Before
@@ -42,13 +46,24 @@ public class CourseTest {
 
     @Test
     public void insertCourse(){
-        course = new Course();
+        user = new User("username", "password");
+        course = new Course("username", "Dr. C", "CST438", "easy peasy lemon squeezy", "Tuesday", "Wednesday");
+        trackerDao.addNewCourse(course);
+        assertEquals("CST438", course.getTitle());
+
     }
 
+    //TODO getcourses for user
     @Test
-    public void deleteCourse(){
+    public void getCoursesForUser() {
+        user = new User("username", "password");
+        course = new Course("username", "Dr. C", "CST438", "easy peasy lemon squeezy", "Tuesday", "Wednesday");
+        trackerDao.addNewCourse(course);
+
+        assertEquals("CST438", course.getTitle());
 
     }
+
 
     @After
     public void closeDb() throws IOException {
