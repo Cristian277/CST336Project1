@@ -16,6 +16,9 @@ import java.io.IOException;
 import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
 import edu.csumb.gradetracker.model.TrackerRoom;
+import edu.csumb.gradetracker.model.User;
+
+import static org.junit.Assert.assertEquals;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -34,6 +37,7 @@ public class CourseTest {
     private static TrackerDao trackerDao;
     private static TrackerRoom db;
     private static Course course;
+    private static User user;
 
     //Creates a database in memory with the context of the database on file
     @Before
@@ -46,6 +50,7 @@ public class CourseTest {
 
     @Test
     public void insertCourse(){
+<<<<<<< HEAD
         Course course = new Course("jerry", "dr. c", "cst438", "easy", "tuesday", "wednesday");
         trackerDao.addNewCourse(course);
         assertEquals("jerry", course.getUserName());
@@ -90,6 +95,23 @@ public class CourseTest {
         Course course = new Course("jerry", "dr. c", "cst438", "easy", "tuesday", "wednesday");
         assertEquals("cst438", course.getTitle());
     }
+=======
+        user = new User("username", "password");
+        course = new Course("username", "Dr. C", "CST438", "easy peasy lemon squeezy", "Tuesday", "Wednesday");
+        trackerDao.addNewCourse(course);
+        assertEquals("CST438", course.getTitle());
+
+    }
+
+    //TODO getcourses for user
+    @Test
+    public void getCoursesForUser() {
+        user = new User("username", "password");
+        course = new Course("username", "Dr. C", "CST438", "easy peasy lemon squeezy", "Tuesday", "Wednesday");
+        trackerDao.addNewCourse(course);
+
+        assertEquals("CST438", course.getTitle());
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
 
     @Test
     public void setTitle() {
@@ -104,6 +126,7 @@ public class CourseTest {
         assertEquals("easy", course.getDescription());
     }
 
+<<<<<<< HEAD
     @Test
     public void setDescription() {
         Course c = new Course();
@@ -146,6 +169,8 @@ public class CourseTest {
         assertEquals(3, c.getId());
     }
 
+=======
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
 
     @After
     public void closeDb() throws IOException {

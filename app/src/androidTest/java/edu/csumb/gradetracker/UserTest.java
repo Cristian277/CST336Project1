@@ -20,6 +20,8 @@ import edu.csumb.gradetracker.model.TrackerRoom;
 import edu.csumb.gradetracker.model.User;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 /*
     1. Insert and Test a User in the Database
@@ -57,35 +59,55 @@ public class UserTest {
         trackerDao.addUser(user);
         assertEquals("testUsername", user.getUsername());
         assertEquals("testPassword", user.getPassword());
-
-        //Chain Start_____________________________________________________________
     }
 
     @Test
     public void getUsernameTest(){
+<<<<<<< HEAD
         user = new User("testUsername","testPassword" );
+=======
+        user = new User("testUsername", "testPassword");
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
         assertEquals("testUsername", user.getUsername());
     }
 
     @Test
+<<<<<<< HEAD
     public void getPasswordTest(){
         user = new User("testUsername","testPassword" );
+=======
+    public void setPasswordTest(){
+        user = new User("testUsername", "testPassword");
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
         assertEquals("testPassword", user.getPassword());
+        user.setPassword("passwordChange");
+        assertNotEquals("testUsername", user.getPassword());
     }
 
     @Test
+<<<<<<< HEAD
     public void getIdTest(){
         User user = new User();
         user.setId(33);
         assertEquals(33, user.getId());
+=======
+    public void getPasswordTest(){
+        user = new User("testUsername", "testPassword");
+        assertEquals("testPassword", user.getPassword());
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
     }
 
-    //Not sure how to update
     @Test
+<<<<<<< HEAD
     public void setPasswordTest(){
         User user = new User();
         user.setPassword("s");
         assertEquals("s", user.getPassword());
+=======
+    public void getIdTest(){
+        user = new User("testUsername", "testPassword");
+        assertEquals(0, user.getId());
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
     }
 
 
@@ -97,8 +119,7 @@ public class UserTest {
         List<User> users = trackerDao.getAllUsers();
         assertEquals("testUsername", user.getUsername());
         trackerDao.deleteUser(user);
-        //TODO: deleteUser test not done yet. What am I checking against when the user gets deleted?
-        //TODO: Maybe use a list and decrement the number of users in the list after deletion
+        assertNotEquals("1", users.size());
     }
 
     @After
