@@ -36,7 +36,7 @@ public class ShowAssignmentsActivity extends AppCompatActivity {
 
     User mUser = MainActivity.mUser;
     static Course mCourse = ShowCoursesActivity.mCourse;
-    static  Assignment mAssignment = null;
+    static Assignment mAssignment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

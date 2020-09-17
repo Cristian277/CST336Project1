@@ -41,6 +41,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".EditAssignmentActivity"
             android:label="Grade Tracker"
@@ -51,6 +52,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".EditUserActivity"
             android:label="Grade Tracker"

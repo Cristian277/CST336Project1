@@ -68,8 +68,8 @@ public class AddAssignmentActivity extends AppCompatActivity {
         String assignmentName = mAssignmentName.getText().toString();
         String dueDate = mDueDate.getText().toString();
 
-        long earnedScore = Long.parseLong(mEarnedScore.getText().toString());
-        long maxScore = Long.parseLong(mMaxScore.getText().toString());
+        Double earnedScore = Double.parseDouble(mEarnedScore.getText().toString());
+        Double maxScore = Double.parseDouble(mMaxScore.getText().toString());
         //GET ACCESS TO THE DAO
         TrackerDao dao = TrackerRoom.getTrackerRoom(AddAssignmentActivity.this).dao();
 

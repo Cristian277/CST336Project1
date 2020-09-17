@@ -15,10 +15,10 @@ public class Assignment {
     private String dueDate;
 
     @ColumnInfo(name = "earnedScore")
-    private long earnedScore;
+    private Double earnedScore;
 
     @ColumnInfo(name = "maxScore")
-    private long maxScore;
+    private Double maxScore;
 
     @ColumnInfo(name = "assignmentName")
     private String assignmentName;
@@ -29,7 +29,7 @@ public class Assignment {
     public Assignment() {}
 
     @Ignore
-    public Assignment(String courseTitle, String assignmentName, String dueDate, long earnedScore, long maxScore){
+    public Assignment(String courseTitle, String assignmentName, String dueDate, Double earnedScore, Double maxScore){
         this.courseTitle=courseTitle;
         this.assignmentName = assignmentName;
         this.courseTitle = courseTitle;
@@ -66,25 +66,25 @@ public class Assignment {
         this.dueDate = dueDate;
     }
 
-    public long getEarnedScore() {
+    public Double getEarnedScore() {
         return earnedScore;
     }
 
-    public void setEarnedScore(long earnedScore) {
+    public void setEarnedScore(Double earnedScore) {
         this.earnedScore = earnedScore;
     }
 
-    public long getMaxScore() {
+    public Double getMaxScore() {
         return maxScore;
     }
 
-    public void setMaxScore(long maxScore) {
+    public void setMaxScore(Double maxScore) {
         this.maxScore = maxScore;
     }
 
     @Override
     public String toString() {
         return "Title: " + assignmentName + "\n" + "Due Date:  "+ dueDate + "\n" + "Earned Score: "+
-                earnedScore + "\n" + "Max Score: " + maxScore + "\n";
+                earnedScore + "\n" + "Max Score: " + maxScore + "\n" + "Grade: " + (earnedScore/maxScore)*100 + "%" + "\n";
     }
 }

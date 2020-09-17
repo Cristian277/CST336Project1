@@ -107,9 +107,6 @@ public class CreateAccountActivity  extends AppCompatActivity {
         boolean hasUppercase = !userNameOrPassword.equals(userNameOrPassword.toLowerCase());
         boolean hasLowercase = !userNameOrPassword.equals(userNameOrPassword.toUpperCase());
 
-        boolean userNameCorrect = false;
-        boolean passwordCorrect = false;
-
         for (int x = 0; x < userNameOrPassword.length(); x++) {
 
             if (userNameOrPassword.charAt(x) >= 65 && userNameOrPassword.charAt(x) <= 90 || (userNameOrPassword.charAt(x) >= 97 && userNameOrPassword.charAt(x) <= 122)) {
