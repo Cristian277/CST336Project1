@@ -63,25 +63,30 @@ public class UserTest {
 
     @Test
     public void getUsernameTest(){
+        user = new User("testUsername","testPassword" );
         assertEquals("testUsername", user.getUsername());
     }
 
     @Test
     public void getPasswordTest(){
+        user = new User("testUsername","testPassword" );
         assertEquals("testPassword", user.getPassword());
     }
 
     @Test
     public void getIdTest(){
-        assertEquals(0, user.getId());
+        User user = new User();
+        user.setId(33);
+        assertEquals(33, user.getId());
     }
 
     //Not sure how to update
     @Test
     public void setPasswordTest(){
-
+        User user = new User();
+        user.setPassword("s");
+        assertEquals("s", user.getPassword());
     }
-
 
 
     //Checks if we can delete users from the database
