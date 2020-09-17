@@ -11,22 +11,20 @@ import java.util.List;
 @Dao
 public interface TrackerDao {
 
-    //THESE ARE ALL OUR FUNCTIONS FOR THE USER JAVA CLASS
+    //these are all the functions for the USER java class
     @Query("select * from User")
     List<User> getAllUsers();
 
-    // the generated id value is returned
     @Insert
     long addUser(User user);
 
-    // return the number of rows actually updated.  Should be 1
     @Update
     int updateUser(User user);
 
     @Delete
     void deleteUser(User user);
 
-    //THESE ARE ALL THE FUNCTIONS FOR THE COURSE JAVA CLASS
+    //these are all the functions for the COURSE JAVA CLASS
 
     @Query("select * from Course")
     List<Course> getAllCourses();
@@ -43,7 +41,7 @@ public interface TrackerDao {
     @Delete
     void deleteCourse(Course course);
 
-    //THESE ARE ALL THE FUNCTIONS FOR THE ASSIGNMENT CLASS
+    //these are all the functions for the ASSIGNMENT CLASS
 
     @Query("select * from Assignment")
     List<Assignment> getAllAssignments();

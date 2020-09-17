@@ -63,28 +63,51 @@ public class UserTest {
 
     @Test
     public void getUsernameTest(){
+<<<<<<< HEAD
+        user = new User("testUsername","testPassword" );
+=======
         user = new User("testUsername", "testPassword");
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
         assertEquals("testUsername", user.getUsername());
     }
 
     @Test
+<<<<<<< HEAD
+    public void getPasswordTest(){
+        user = new User("testUsername","testPassword" );
+=======
     public void setPasswordTest(){
         user = new User("testUsername", "testPassword");
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
         assertEquals("testPassword", user.getPassword());
         user.setPassword("passwordChange");
         assertNotEquals("testUsername", user.getPassword());
     }
 
     @Test
+<<<<<<< HEAD
+    public void getIdTest(){
+        User user = new User();
+        user.setId(33);
+        assertEquals(33, user.getId());
+=======
     public void getPasswordTest(){
         user = new User("testUsername", "testPassword");
         assertEquals("testPassword", user.getPassword());
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
     }
 
     @Test
+<<<<<<< HEAD
+    public void setPasswordTest(){
+        User user = new User();
+        user.setPassword("s");
+        assertEquals("s", user.getPassword());
+=======
     public void getIdTest(){
         user = new User("testUsername", "testPassword");
         assertEquals(0, user.getId());
+>>>>>>> 4dcfe01c7d1d9ba34bb6596bfa6cba807d0ecbf4
     }
 
 
