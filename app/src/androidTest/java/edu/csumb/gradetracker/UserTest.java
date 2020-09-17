@@ -44,7 +44,7 @@ public class UserTest {
     }
 
     @Test
-    public void useAppContext() {
+    public void useAppContext() { //irrelevent
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("edu.csumb.gradetracker", appContext.getPackageName());
