@@ -20,7 +20,7 @@ import edu.csumb.gradetracker.model.User;
 
 public class EditUserActivity extends AppCompatActivity {
 
-    User mUser = MainActivity.mUser;
+    User mUser = MainActivity.mUser; //getting the user that's logged in's information
     EditText mPassword;
     Button submitButton;
     Button returnMainMenu;
@@ -52,7 +52,9 @@ public class EditUserActivity extends AppCompatActivity {
         });
 
     }
-
+    //we get the new password that was typed in the text box, get an instance of the dao, check
+    //if the password is empty or not then use a setter on the mUser object and pass it back
+    //to the database through the update function
     boolean changePassword(){
 
         String password = mPassword.getText().toString();

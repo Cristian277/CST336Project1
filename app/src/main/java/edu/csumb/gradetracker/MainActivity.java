@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     List<User> mUserList;
     EditText mUserName;
     EditText mPassword;
+    //Created a static user that is available throughout all the other activities
+    //as long as they are logged in
     static User mUser = null;
 
     @Override

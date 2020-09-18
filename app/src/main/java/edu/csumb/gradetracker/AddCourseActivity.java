@@ -24,7 +24,8 @@ public class AddCourseActivity extends AppCompatActivity {
     EditText mCourseDescription;
     EditText mStartDate;
     EditText mEndDate;
-    User mUser = MainActivity.mUser; //GET THE USER THAT'S LOGGED IN
+
+    User mUser = MainActivity.mUser; //Getting the user that was stored in mUser at log in
 
     Button addCourseButton;
     Button returnMainMenu;
@@ -65,6 +66,7 @@ public class AddCourseActivity extends AppCompatActivity {
         });
     }
 
+    //This functions adds a course to the database by creating a course object first
     boolean addCourse(){
 
         String instructorName = mInstructorName.getText().toString();

@@ -20,6 +20,7 @@ import edu.csumb.gradetracker.model.User;
 
 public class CreateAccountActivity  extends AppCompatActivity {
 
+    //Setting up the edit text and list to hold users
     EditText mUserName;
     EditText mPassword;
     List<User> mUsers;
@@ -38,10 +39,11 @@ public class CreateAccountActivity  extends AppCompatActivity {
         mUserName = findViewById(R.id.username); //set to the text typed in
         mPassword = findViewById(R.id.password);
 
+        //when the create_button is called validateUser() is called inside of it
         create_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //if validate user returns false the counter goes up and too many wrong attempts kick you out
                 if(!validateUser()) count++;
                 if(count==4){
 
@@ -68,6 +70,7 @@ public class CreateAccountActivity  extends AppCompatActivity {
         });
     }
 
+    //this is a function to make sure the username and password meet the right requirements
     boolean validateUser() {
 
         String userName = mUserName.getText().toString();
@@ -78,10 +81,12 @@ public class CreateAccountActivity  extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Empty Entry.", Toast.LENGTH_SHORT).show();
         }
 
+        //if the username and password are correct and the user is not in the database then add them
         if(checkCharacters(userName)&&checkCharacters(password)&&!userInDatabase(userName)){
 
             User newUser = new User(userName, password);
 
+            //getting dao information to add user
             TrackerDao dao = TrackerRoom.getTrackerRoom(CreateAccountActivity.this).dao();
             dao.addUser(newUser);
 
@@ -96,9 +101,10 @@ public class CreateAccountActivity  extends AppCompatActivity {
         }
         return false;
     }
-
+    //function to check the username and password for the right characters
     boolean checkCharacters(String userNameOrPassword){
 
+        //set up counters for each requirement
         int alphabetCount = 0;
         int digitCount = 0;
 
@@ -131,6 +137,8 @@ public class CreateAccountActivity  extends AppCompatActivity {
         return false;
     }
 
+    //function that gets list of users and checks if the username matches up with any of them
+    //before actually creating the user and adding it to the database
     boolean userInDatabase(String userName){
 
         mUsers = TrackerRoom.getTrackerRoom(CreateAccountActivity.this).dao().getAllUsers(); //get all logs

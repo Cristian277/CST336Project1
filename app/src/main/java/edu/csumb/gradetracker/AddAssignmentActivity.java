@@ -29,6 +29,7 @@ public class AddAssignmentActivity extends AppCompatActivity {
     Button mSubmitButton;
     Button mReturnButton;
 
+    //making sure to get prior information up to this point
     User mUser = MainActivity.mUser;
     static Course mCourse = ShowCoursesActivity.mCourse;
     static  Assignment mAssignment = null;
@@ -62,7 +63,7 @@ public class AddAssignmentActivity extends AppCompatActivity {
             }
         });
     }
-
+    //creating the assignment object and adding it to the dao
     boolean addNewAssignment(){
 
         String assignmentName = mAssignmentName.getText().toString();

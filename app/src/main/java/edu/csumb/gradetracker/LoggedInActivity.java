@@ -23,6 +23,7 @@ public class LoggedInActivity extends AppCompatActivity {
 
         mDisplayName = findViewById(R.id.welcomeMessage);
 
+        //this will display a welcome message with the users name
         mDisplayName.setText("Hello " + mUser.getUsername() + "!");
 
         //TAKES USER TO ADD COURSES ACTIVITY

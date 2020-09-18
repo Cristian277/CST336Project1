@@ -32,6 +32,8 @@ public class ShowCoursesActivity extends AppCompatActivity {
     List<Course> courses;
     Button clear_button;
     User mUser = MainActivity.mUser;
+    //created a static mCourse so that we can access it later when we go to the
+    //edit course activity
     static Course mCourse = null;
 
     @Override
@@ -42,11 +44,14 @@ public class ShowCoursesActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //retrieving list of courses for the specific logged in user
         courses = TrackerRoom.getTrackerRoom(this).dao().getCoursesForUser(mUser.getUsername());
 
+        //setting up list view to display the courses list
         ListView courses_view = findViewById(R.id.course_list);
         courses_view.setAdapter( new CourseListAdapter(this,courses));
 
+        //if the course is empty then show a message that there are no courses currently
         if(courses.isEmpty()){
 
             AlertDialog.Builder builder = new AlertDialog.Builder(ShowCoursesActivity.this);
@@ -101,7 +106,7 @@ public class ShowCoursesActivity extends AppCompatActivity {
         });
     }
 
-    //DELETES ALL COURSES
+    //Scans the course list and deletes all courses
     boolean clearCourses(){
 
         TrackerDao dao = TrackerRoom.getTrackerRoom(ShowCoursesActivity.this).dao();

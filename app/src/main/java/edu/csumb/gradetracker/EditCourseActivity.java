@@ -87,6 +87,8 @@ public class EditCourseActivity extends AppCompatActivity {
 
 
     }
+    //Making sure that there was some text in the text boxes before we submit anything otherwise
+    //empty text will be submitted to the database which we don't want
     boolean submitEdit(){
 
         String instructorName = mInstructorName.getText().toString();
@@ -124,7 +126,8 @@ public class EditCourseActivity extends AppCompatActivity {
 
         return true;
     }
-
+    //this deletes the specific course that was selected in the showCoursesActivity by using the
+    //static mCourse object and passing into the deleteCourse function in the dao
     void deleteCourse(){
 
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditCourseActivity.this).dao();

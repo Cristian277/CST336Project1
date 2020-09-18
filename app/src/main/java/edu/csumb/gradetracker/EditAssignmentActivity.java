@@ -74,13 +74,13 @@ public class EditAssignmentActivity extends AppCompatActivity {
 
     }
 
+    //if the text boxes aren't empty then we use the setters to edit the assignment object that
+    //was clicked on in showAssignmentsActivity and then update it in the database by passing it
+    //back in with the update function
     boolean submitEdit(){
 
         String assignmentName = mAssignmentName.getText().toString();
         String assignmentDueDate = mDueDate.getText().toString();
-
-        //Double earnedScore = Double.parseDouble(mEarnedScore.getText().toString());
-        //Double maxScore = Double.parseDouble(mMaxScore.getText().toString());
 
         //GETS ACCESS TO THE DAO
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditAssignmentActivity.this).dao();
@@ -102,7 +102,7 @@ public class EditAssignmentActivity extends AppCompatActivity {
 
         return true;
     }
-
+    //deleting the specific assignment that was clicked on
     void deleteAssignment(){
 
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditAssignmentActivity.this).dao();
