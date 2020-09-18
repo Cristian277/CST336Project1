@@ -152,7 +152,7 @@ public class TrackerDaoTest {
         assertEquals("testUsername", user.getUsername());
         users = trackerDao.getAllUsers();
         trackerDao.deleteUser(user);
-        assertEquals("1", users.size());
+        assertEquals("0", users.size());
         users.remove(0);
     }
 
@@ -164,7 +164,7 @@ public class TrackerDaoTest {
         trackerDao.addNewCourse(course);
         trackerDao.deleteCourse(course);
         courses = trackerDao.getAllCourses();
-        assertEquals(1, courses.size());
+        assertEquals(0, courses.size());
         courses.remove(0);
     }
 
@@ -176,7 +176,7 @@ public class TrackerDaoTest {
         trackerDao.addNewAssignment(assignment);
         trackerDao.deleteAssignment(assignment);
         assignments = trackerDao.getAllAssignments();
-        assertEquals(1, assignments.size());
+        assertEquals(0, assignments.size());
         assignments.remove(0);
     }
 
