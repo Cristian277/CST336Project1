@@ -46,8 +46,8 @@ public interface TrackerDao {
     @Query("select * from Assignment")
     List<Assignment> getAllAssignments();
 
-    @Query("select * from Assignment where courseTitle = :courseTitle")
-    List<Assignment> getAssignmentsForCourse(String courseTitle);
+    @Query("select * from Assignment where courseTitle = :title")
+    List<Assignment> getAssignmentsForCourse(String title);
 
     @Insert
     long addNewAssignment(Assignment assignment);

@@ -1,6 +1,7 @@
 package edu.csumb.gradetracker;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -40,6 +42,28 @@ public class ShowCoursesActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        courses = TrackerRoom.getTrackerRoom(this).dao().getCoursesForUser(mUser.getUsername());
+
+        ListView courses_view = findViewById(R.id.course_list);
+        courses_view.setAdapter( new CourseListAdapter(this,courses));
+
+        if(courses.isEmpty()){
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(ShowCoursesActivity.this);
+
+            String msg = "There are currently no courses to display.";
+            builder.setTitle(msg);
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+
+            builder.show();
+
+        }
+
         clear_button = findViewById(R.id.clear_courses_button);
 
         clear_button.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +86,9 @@ public class ShowCoursesActivity extends AppCompatActivity {
             }
         });
 
-
-        courses = TrackerRoom.getTrackerRoom(this).dao().getCoursesForUser(mUser.getUsername());
-
-        ListView courses_view = findViewById(R.id.course_list);
+        //ListView courses_view = findViewById(R.id.course_list);
         //Takes in a course arraylist to display
-        courses_view.setAdapter(new CourseListAdapter( this,courses) );
+        //courses_view.setAdapter(new CourseListAdapter( this,courses) );
 
         courses_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

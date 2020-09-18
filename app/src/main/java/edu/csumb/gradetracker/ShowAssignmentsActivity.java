@@ -1,8 +1,10 @@
 package edu.csumb.gradetracker;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,12 +32,14 @@ public class ShowAssignmentsActivity extends AppCompatActivity {
 
     List<Assignment> assignments;
 
+    TextView mTotalGrade;
+
     Button clear_button;
     Button returnToMainMenuButton;
     Button addAssignmentButton;
 
     User mUser = MainActivity.mUser;
-    static Course mCourse = ShowCoursesActivity.mCourse;
+    Course mCourse = ShowCoursesActivity.mCourse;
     static Assignment mAssignment = null;
 
     @Override
@@ -46,12 +50,30 @@ public class ShowAssignmentsActivity extends AppCompatActivity {
         returnToMainMenuButton = findViewById(R.id.return_button);
         clear_button = findViewById(R.id.clear_assignments_button);
         addAssignmentButton = findViewById(R.id.add_assignment_button);
+        mTotalGrade = findViewById(R.id.course_grade);
 
         assignments = TrackerRoom.getTrackerRoom(ShowAssignmentsActivity.this).dao().getAssignmentsForCourse(mCourse.getTitle());
 
         ListView assignmentsView = findViewById(R.id.assignment_list);
-        //Takes in a course arraylist to display
-        assignmentsView.setAdapter(new ShowAssignmentsActivity.AssignmentListAdapter( this,assignments) );
+        assignmentsView.setAdapter(new ShowAssignmentsActivity.AssignmentListAdapter( this,assignments));
+
+        if(assignments.isEmpty()){
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(ShowAssignmentsActivity.this);
+
+            String msg = "There are currently no assignments to display.";
+            builder.setTitle(msg);
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+
+            builder.show();
+        }
+
+        mTotalGrade.setText("\tCourse Grade: " + calculateAssignments() + "%");
 
         assignmentsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -100,6 +122,29 @@ public class ShowAssignmentsActivity extends AppCompatActivity {
         }
 
         return true;
+
+    }
+
+    String calculateAssignments(){
+
+        double earnedScore=0.0;
+        double maxScore=0.0;
+        double gradeSum=0.0;
+        String courseGrade;
+
+        if(!assignments.isEmpty()){
+
+            for(Assignment assignment:assignments){
+                earnedScore+=assignment.getEarnedScore();
+                maxScore+=assignment.getMaxScore();
+            }
+
+            gradeSum = (earnedScore/maxScore)*100;
+        }
+
+        courseGrade = String.format("%.2f",gradeSum);
+
+        return courseGrade;
 
     }
 

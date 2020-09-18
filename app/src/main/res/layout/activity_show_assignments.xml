@@ -28,6 +28,13 @@
         android:layout_weight="1" >
     </ListView>
 
+    <TextView
+        android:id="@+id/course_grade"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
