@@ -26,8 +26,6 @@ public class EditAssignmentActivity extends AppCompatActivity {
     //these are the boxes we type input
     EditText mAssignmentName;
     EditText mDueDate;
-    EditText mEarnedScore;
-    EditText mMaxScore;
 
     Button submitButton;
     Button returnToCourses;
@@ -41,20 +39,16 @@ public class EditAssignmentActivity extends AppCompatActivity {
 
         mAssignmentName = findViewById(R.id.assignment_name);
         mDueDate = findViewById(R.id.due_date);
-        mEarnedScore = findViewById(R.id.earned_score);
-        mMaxScore = findViewById(R.id.max_score);
 
         returnToCourses = findViewById(R.id.return_button);
         deleteButton = findViewById(R.id.delete_button);
         submitButton = findViewById(R.id.submit_button);
 
-        //String stringEarnedScore = Double.toString(mAssignment.getEarnedScore());
-        //String stringMaxScore = Double.toString(mAssignment.getMaxScore());
+        String stringEarnedScore = Double.toString(mAssignment.getEarnedScore());
+        String stringMaxScore = Double.toString(mAssignment.getMaxScore());
 
         mAssignmentName.setHint(mAssignment.getAssignmentName());
         mDueDate.setHint(mAssignment.getDueDate());
-        //mEarnedScore.setHint(stringEarnedScore);
-        //mMaxScore.setHint(stringMaxScore);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,8 +78,9 @@ public class EditAssignmentActivity extends AppCompatActivity {
 
         String assignmentName = mAssignmentName.getText().toString();
         String assignmentDueDate = mDueDate.getText().toString();
-        //int earnedScore = Integer.parseInt(mEarnedScore.getText().toString());
-        //int maxScore = Integer.parseInt(mMaxScore.getText().toString());
+
+        //Double earnedScore = Double.parseDouble(mEarnedScore.getText().toString());
+        //Double maxScore = Double.parseDouble(mMaxScore.getText().toString());
 
         //GETS ACCESS TO THE DAO
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditAssignmentActivity.this).dao();
@@ -97,16 +92,6 @@ public class EditAssignmentActivity extends AppCompatActivity {
         if(!assignmentDueDate.isEmpty()){
             mAssignment.setDueDate(assignmentDueDate);
         }
-        /*
-        if(earnedScore!=null){
-            mAssignment.setEarnedScore(earnedScore);
-        }
-
-        if(maxScore!=null){
-            mAssignment.setMaxScore(maxScore);
-        }
-         */
-
 
         dao.updateAssignment(mAssignment);
 
