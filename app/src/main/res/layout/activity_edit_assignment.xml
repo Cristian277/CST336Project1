@@ -45,26 +45,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/due_date" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Earned Score " />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/earned_score" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Max Score" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/max_score" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

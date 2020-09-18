@@ -32,7 +32,6 @@ public class EditAssignmentActivity extends AppCompatActivity {
     Button submitButton;
     Button returnToCourses;
     Button deleteButton;
-    Button viewAssignmentsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +48,13 @@ public class EditAssignmentActivity extends AppCompatActivity {
         deleteButton = findViewById(R.id.delete_button);
         submitButton = findViewById(R.id.submit_button);
 
-        String stringEarnedScore = Double.toString(mAssignment.getEarnedScore());
-        String stringMaxScore = Double.toString(mAssignment.getMaxScore());
+        //String stringEarnedScore = Double.toString(mAssignment.getEarnedScore());
+        //String stringMaxScore = Double.toString(mAssignment.getMaxScore());
 
         mAssignmentName.setHint(mAssignment.getAssignmentName());
         mDueDate.setHint(mAssignment.getDueDate());
-        mEarnedScore.setHint(stringEarnedScore);
-        mMaxScore.setHint(stringMaxScore);
+        //mEarnedScore.setHint(stringEarnedScore);
+        //mMaxScore.setHint(stringMaxScore);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,8 +84,8 @@ public class EditAssignmentActivity extends AppCompatActivity {
 
         String assignmentName = mAssignmentName.getText().toString();
         String assignmentDueDate = mDueDate.getText().toString();
-        Double earnedScore = Double.parseDouble(mEarnedScore.getText().toString());
-        Double maxScore = Double.parseDouble(mMaxScore.getText().toString());
+        //int earnedScore = Integer.parseInt(mEarnedScore.getText().toString());
+        //int maxScore = Integer.parseInt(mMaxScore.getText().toString());
 
         //GETS ACCESS TO THE DAO
         TrackerDao dao = TrackerRoom.getTrackerRoom(EditAssignmentActivity.this).dao();
@@ -98,12 +97,16 @@ public class EditAssignmentActivity extends AppCompatActivity {
         if(!assignmentDueDate.isEmpty()){
             mAssignment.setDueDate(assignmentDueDate);
         }
+        /*
         if(earnedScore!=null){
             mAssignment.setEarnedScore(earnedScore);
         }
+
         if(maxScore!=null){
             mAssignment.setMaxScore(maxScore);
         }
+         */
+
 
         dao.updateAssignment(mAssignment);
 
