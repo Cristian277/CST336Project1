@@ -85,6 +85,6 @@ public class Assignment {
     @Override
     public String toString() {
         return "Title: " + assignmentName + "\n" + "Due Date:  "+ dueDate + "\n" + "Earned Score: "+
-                earnedScore + "\n" + "Max Score: " + maxScore + "\n" + "Grade: " + (earnedScore/maxScore)*100 + "%" + "\n";
+                earnedScore + "\n" + "Max Score: " + maxScore + "\n" + "Grade: " + String.format("%.2f", (earnedScore/maxScore)*100) + "%" + "\n";
     }
 }
