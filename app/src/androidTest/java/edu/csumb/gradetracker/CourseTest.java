@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
+import java.util.List;
 
 import edu.csumb.gradetracker.model.Course;
 import edu.csumb.gradetracker.model.TrackerDao;
@@ -23,7 +24,6 @@ import static org.junit.Assert.assertNull;
 
 
 @RunWith(AndroidJUnit4.class)
-
 public class CourseTest {
 
     private static TrackerDao trackerDao;
@@ -46,13 +46,16 @@ public class CourseTest {
         trackerDao.addNewCourse(course);
         assertEquals("jerry", course.getUserName());
     }
+
     //todo: fix this case failure
     @Test
     public void deleteCourse(){
         Course course = new Course("jerry", "dr. c", "cst438", "easy", "tuesday", "wednesday");
         trackerDao.addNewCourse(course);
+        assertEquals("jerry", course.getUserName());
         trackerDao.deleteCourse(course);
-        assertNull(course);
+        List<Course> courses = trackerDao.getAllCourses();
+        assertEquals(0, courses.size());
     }
 
     @Test
