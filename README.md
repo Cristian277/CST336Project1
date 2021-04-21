@@ -1,4 +1,4 @@
-# CST438Project1
+# CST438-Project-1
 
 # Description: 
 
