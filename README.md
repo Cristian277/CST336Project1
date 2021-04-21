@@ -15,9 +15,9 @@ Project End:
 - Github Link: https://github.com/Jonathan-Welham
 
 ### Cristian Arredondo
-- Email: 
-- Phone:
-- Github Link: 
+- Email: carredondo@csumb.edu
+- Phone: (831)512-3404
+- Github Link: https://github.com/Cristian277
 
 ### Jerry Kankelborg
 - Email: 
